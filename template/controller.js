@@ -16,12 +16,6 @@ $(document).ready(function () {
         $("#SiriWave").attr("hidden", true);
     }
 
-
-
-
-
-
-
     
     eel.expose(senderText)
     function senderText(message) {

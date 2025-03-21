@@ -9,6 +9,7 @@ def speak(text) :
     engine = pyttsx3.init()
     engine.setProperty('rate', 150)
     engine.say(text)
+    eel.receiverText(text)
     engine.runAndWait()
 
 def takeCommand() :
@@ -39,8 +40,10 @@ def takeCommand() :
 def allCommands(message) :
     if message == "" :
         query = takeCommand()
+        eel.senderText(query)
     else :
         query = message
+        eel.senderText(query)
 
     if "open" in query:
         from backend.features import openCommand
