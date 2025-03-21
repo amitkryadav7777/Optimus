@@ -45,7 +45,7 @@ def allCommands(message) :
     if "open" in query:
         from backend.features import openCommand
         openCommand(query)
-    elif ("on Youtube"):
+    elif "on Youtube" in query:
         from backend.features import playYoutube
         playYoutube(query)
     else:
