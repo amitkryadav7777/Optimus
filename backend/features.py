@@ -89,7 +89,7 @@ def hotword() :
 
     try:
         # Pre trained keywords
-        porcupine = pvporcupine.create(keywords=["E:\\Github\\Git Repo\\Optimus\\template\\assets\\hotword_porcupine","alexa"])
+        porcupine = pvporcupine.create(models=[r'template\\assets\\hotword_porcupine\\Optimus_en_wasm.ppn_v3_0_0'])
         paud = pyaudio.PyAudio()
         audio_stream = paud.open(rate=porcupine.sample_rate,channels=1,format=pyaudio.paInt16,input=True,frames_per_buffer=porcupine.frame_length)
 
