@@ -4,9 +4,10 @@ import eel
 from backend.features import *
 from backend.command import *
 
-eel.init("template")
+def start() :
+    eel.init("template")
 
-playOptimusSound()
+    playOptimusSound()
 
-os.system('Start msedge.exe --app="http://localhost:8000/index.html')
-eel.start('index.html', mode=None, host='localhost', block=True)
+    os.system('Start msedge.exe --app="http://localhost:8000/index.html')
+    eel.start('index.html', mode=None, host='localhost', block=True)

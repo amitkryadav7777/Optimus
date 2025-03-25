@@ -3,7 +3,8 @@ import pyttsx3
 import speech_recognition as sr
 import time
 import pywhatkit
-
+import pvporcupine
+# pip install pvporcupine==1.9.5
 
 def speak(text) :
     engine = pyttsx3.init()
@@ -38,21 +39,27 @@ def takeCommand() :
 
 @eel.expose()
 def allCommands(message) :
-    if message == "" :
-        query = takeCommand()
-        eel.senderText(query)
-    else :
-        query = message
-        eel.senderText(query)
 
-    if "open" in query:
-        from backend.features import openCommand
-        openCommand(query)
-    elif "on Youtube" in query:
-        from backend.features import playYoutube
-        playYoutube(query)
-    else:
-        print("Not run")
+    try:
+        if message == "" :
+            query = takeCommand()
+            eel.senderText(query)
+        else :
+            query = message
+            eel.senderText(query)
+
+        if "open" in query:
+            from backend.features import openCommand
+            openCommand(query)
+        elif "on Youtube" in query:
+            from backend.features import playYoutube
+            playYoutube(query)
+        else:
+            print("Not run")
+    
+    except:
+        print("Error")
+
 
     eel.ShowHood()
 
